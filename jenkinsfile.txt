@@ -1,0 +1,16 @@
+//start of pipeline
+pipeline {
+//where pipeline job will run
+agent any 
+//start of stages: build, test, deploy
+ stages {
+//start of stages :build
+stage('build'){
+//start of runnig steps inside one stage
+steps {
+//invoke command to build with maven
+bat 'mvn clean install'
+     }
+   }
+ }
+}
